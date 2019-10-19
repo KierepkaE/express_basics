@@ -5,9 +5,12 @@ app.listen(3000, () => {
 });
 
 app.get('/', (req, res) => {
-  res.send('hello world');
+  res.location('https://google.com');
+  res.sendStatus(302);
 
 })
+
+
 // app.get('/hello/new-user', (req, res) => {
 //   console.log('add new user');
 // });
