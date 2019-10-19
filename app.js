@@ -4,8 +4,8 @@ app.listen(3000, () => {
   console.log('listening . . . ');
 });
 
-app.get('/', (req, res) => {
-  res.redirect('https://google.com');
+app.get('/google', (req, res) => {
+  res.redirect('https://google.com', 301);
 
 
 })
