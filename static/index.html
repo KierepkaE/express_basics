@@ -30,7 +30,11 @@
             e.preventDefault();
             const name = nameInput.value;
             const surname = surnameInput.value;
-            const url = `http://localhost:5500/?name=${encodeURIComponent(name)}&surname=${encodeURIComponent(surname)}`;
+            const params = new URLSearchParams({
+                name,
+                surname
+            });
+            const url = `http://localhost:5500` + params;
             a.setAttribute('href', url);
         })
     </script>
