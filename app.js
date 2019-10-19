@@ -5,8 +5,8 @@ app.listen(3000, () => {
 });
 
 app.get('/', (req, res) => {
-  res.write('hello world');
-  res.end();
+  res.send('hello world');
+
 })
 // app.get('/hello/new-user', (req, res) => {
 //   console.log('add new user');
