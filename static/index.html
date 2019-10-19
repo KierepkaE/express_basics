@@ -10,6 +10,30 @@
 
 <body>
 
+    <form action="post">
+        Name: <br>
+        <input type="text" id="name">
+        <br> Surname: <br>
+        <input id="surname" type="text">
+        <br>
+        <button type="submit">create link</button>
+    </form>
+
+    <a href="">create link</a>
+    <script>
+        const nameInput = document.querySelector('#name');
+        const surnameInput = document.querySelector('#surname');
+        const form = document.querySelector('form');
+        const a = document.querySelector('a');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = nameInput.value;
+            const surname = surnameInput.value;
+            const url = `http://localhost:5500/?name=${encodeURIComponent(name)}&surname=${encodeURIComponent(surname)}`;
+            a.setAttribute('href', url);
+        })
+    </script>
 </body>
 
 </html>
