@@ -5,8 +5,8 @@ app.listen(3000, () => {
 });
 
 app.get('/', (req, res) => {
-  res.location('https://google.com');
-  res.sendStatus(302);
+  res.redirect('https://google.com');
+
 
 })
 
