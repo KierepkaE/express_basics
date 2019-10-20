@@ -5,39 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Express Basics</title>
+    <title>Express</title>
 </head>
 
 <body>
-
-    <form action="post">
-        Name: <br>
-        <input type="text" id="name">
-        <br> Surname: <br>
-        <input id="surname" type="text">
-        <br>
-        <button type="submit">create link</button>
-    </form>
-
-    <a href="">create link</a>
-    <script>
-        const nameInput = document.querySelector('#name');
-        const surnameInput = document.querySelector('#surname');
-        const form = document.querySelector('form');
-        const a = document.querySelector('a');
-
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = nameInput.value;
-            const surname = surnameInput.value;
-            const params = new URLSearchParams({
-                name,
-                surname
-            });
-            const url = `http://127.0.0.1:5500/` + params;
-            a.setAttribute('href', url);
-        })
-    </script>
+    <img src='/logo'>
 </body>
 
 </html>
