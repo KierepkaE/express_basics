@@ -12,7 +12,11 @@ app.get('/', (req, res) => {
 })
 app.get('/hi/:name', (req, res) => {
   const { name } = req.params;
-  res.cookie('visitor_name', name);
+  const date = new Date();
+  date.setDate(getDate() + 7);
+  res.cookie('visitor_name', name, {
+    experies: date
+  });
   res.send('your name is saved!')
 })
 
