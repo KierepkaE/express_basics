@@ -18,8 +18,8 @@ app.get('/', (req, res) => {
 });
 
 app.get('/logo', (req, res) => {
-  const fileName = 'cat.jpg';
-  res.attachment(fileName, { root: path.join(__dirname, 'static') });
+  const fileName = path.join(__dirname, 'static/cat.jpg')
+  res.download(fileName, 'kitty');
   res.end();
 })
 
