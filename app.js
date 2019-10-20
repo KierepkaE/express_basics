@@ -8,7 +8,7 @@ app.listen(3000, () => {
 
 
 app.get('/', (req, res) => {
-
+  res.send("you've been logged out");
 })
 app.get('/hi/:name', (req, res) => {
   const { name } = req.params;
@@ -19,6 +19,11 @@ app.get('/hi/:name', (req, res) => {
   });
   res.send('your name is saved!')
 })
+
+app.get('/logout', (req, res) => {
+  res.clearCookie('visitor_name');
+  res.redirect('/');
+});
 
 
 
