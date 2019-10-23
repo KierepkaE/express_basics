@@ -10,6 +10,11 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.send("you've been logged out");
 })
+app.post('/send', (req, res) => {
+  const { name, surname } = req.body;
+  res.send(`Hello ${name} ${surname}`)
+
+})
 
 app.get('/hi/:name', (req, res) => {
   const { name } = req.params;
