@@ -6,31 +6,8 @@ app.listen(3000, () => {
 });
 
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'static')));
 
 app.get('/', (req, res) => {
   res.send("you've been logged out");
 })
-app.post('/send', (req, res) => {
-  const { name, surname } = req.body;
-  res.send(`Hello ${name} ${surname}`)
-
-})
-
-app.get('/hi/:name', (req, res) => {
-  const { name } = req.params;
-  const date = new Date();
-  date.setDate(date.getDate() + 7);
-  res.cookie('visitor_name', name, {
-    expires: date
-  });
-  res.send('your name is saved!')
-})
-
-app.get('/logout', (req, res) => {
-  res.clearCookie('visitor_name');
-  res.redirect('/');
-});
-
-
-
-
