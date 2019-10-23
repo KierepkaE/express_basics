@@ -5,11 +5,12 @@ app.listen(3000, () => {
   console.log('listening . . . ');
 });
 
-
+app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send("you've been logged out");
 })
+
 app.get('/hi/:name', (req, res) => {
   const { name } = req.params;
   const date = new Date();
