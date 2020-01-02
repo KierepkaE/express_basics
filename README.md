@@ -1,4 +1,4 @@
 # express_basics
 
 
-- that's code that I produced while finding out how express works
+> That's the code that I produced while finding out how express works
